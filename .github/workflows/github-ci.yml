@@ -25,7 +25,10 @@ jobs:
 
       - name: Start Server
         working-directory: ./server
-        run: npm start
+        run: |
+          node server.js &
+          sleep 5
+          kill $!
 
   build-client:
     runs-on: ubuntu-latest

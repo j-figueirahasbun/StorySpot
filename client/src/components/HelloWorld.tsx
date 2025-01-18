@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import apiService from '../../services/apiService';
 
 const HelloWorld: React.FC = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/hello')
+        apiService.getText()
         .then((response) => {
-            setMessage(response.data.message);
+            setMessage(response);
         })
         .catch((error) => {
             console.error('Error fetching message. ', error);

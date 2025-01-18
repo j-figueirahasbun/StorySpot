@@ -7,7 +7,7 @@ const apiService = {
       try {
         const response = await axios.get(`${domainApi}/hello`);
         
-        return JSON.stringify(response.data.textToDisplay);
+        return JSON.stringify(response.data);
       
         } catch (error) {
         
